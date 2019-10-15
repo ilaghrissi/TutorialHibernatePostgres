@@ -22,9 +22,9 @@ public class Employee {
 	@JsonFormat(pattern="dd/MM/yyyy")
 	private Date hireDate;
 
-	//private Employee manager;
-
 	private String jobTitle;
+	
+	private Employee manager;
 	
 	private Date createdAt;
 	private Date updatedAt;

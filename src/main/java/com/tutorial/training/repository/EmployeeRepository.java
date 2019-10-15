@@ -13,4 +13,6 @@ public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Long> 
 
 	@Query("SELECT e from EmployeeEntity e")
 	public List<EmployeeEntity> getAll();
+	
+	//public List<EmployeeEntity> findByFirstNameAndLastName(String firstName,String lastName);
 }
