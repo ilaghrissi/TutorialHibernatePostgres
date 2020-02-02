@@ -41,5 +41,5 @@ public class LocationEntity {
 	private CountryEntity country;
 	
 	@OneToMany(mappedBy = "location")
-	private Set<DepartmentEntity> departments = new HashSet<DepartmentEntity>();
+	private Set<DepartmentEntity> departments = new HashSet<>();
 }

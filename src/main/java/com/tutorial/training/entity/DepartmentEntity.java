@@ -29,7 +29,7 @@ public class DepartmentEntity {
 	private String departmentName;
 	
 	@OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-	private Set<EmployeeEntity> employees = new HashSet<EmployeeEntity>();
+	private Set<EmployeeEntity> employees = new HashSet<>();
 	
 	@ManyToOne
 	@JoinColumn(name = "LOCATION_ID")

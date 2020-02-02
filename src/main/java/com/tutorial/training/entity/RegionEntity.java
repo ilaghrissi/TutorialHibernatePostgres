@@ -26,6 +26,6 @@ public class RegionEntity {
 	private String regionName; 
 	
 	@OneToMany(mappedBy = "region")
-	private Set<CountryEntity> countries = new HashSet<CountryEntity>();
+	private Set<CountryEntity> countries = new HashSet<>();
 
 }

@@ -28,7 +28,7 @@ public class CountryEntity {
 	private String countryName;
 	
 	@OneToMany(mappedBy = "country")
-	private Set<LocationEntity> locations = new HashSet<LocationEntity>();
+	private Set<LocationEntity> locations = new HashSet<>();
 	
 	@ManyToOne
 	@JoinColumn(name = "REGION_ID")

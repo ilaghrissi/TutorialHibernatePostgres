@@ -22,8 +22,6 @@ public class EmployeeCustomRepositoryImpl implements EmployeeCustomRepository {
 	EntityManager em;
 
 	public List<EmployeeEntity> getEmployees() {
-		// CriteriaBuilder cb = em.getCriteriaBuilder();
-		// CriteriaQuery<EmployeeEntity> cq = cb.createQuery(EmployeeEntity.class);
 		Session currentSession = em.unwrap(Session.class);
 		Query<EmployeeEntity> query = currentSession.createQuery("from EmployeeEntity", EmployeeEntity.class);
 		return query.getResultList();
@@ -52,15 +50,14 @@ public class EmployeeCustomRepositoryImpl implements EmployeeCustomRepository {
 		Session currentSession = em.unwrap(Session.class);
 		currentSession.saveOrUpdate(emp);
 	}
+
 	public List<EmployeeEntity> get() {
 		CriteriaBuilder criteriabuilder = em.getCriteriaBuilder();
 		CriteriaQuery<EmployeeEntity> criteria = criteriabuilder.createQuery(EmployeeEntity.class);
 		Root<EmployeeEntity> root = criteria.from(EmployeeEntity.class);
 		criteria.where(criteriabuilder.equal(root.get("firstName"), "imad"));
 		criteria.where(criteriabuilder.gt(root.get("employeeId"), 2));
-		List<EmployeeEntity> employees = em.createQuery( criteria ).getResultList();
-		return employees;
+		return em.createQuery(criteria).getResultList();
 	}
-	
 
 }

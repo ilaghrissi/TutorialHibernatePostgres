@@ -1,0 +1,14 @@
+spring:
+  datasource: 
+    url: jdbc:h2:mem:testbase;DB_CLOSE_ON_EXIST;MODE=PostgresSQL;INIT=RUNSCRIPT FROM 'classpath:setup.sql'
+    username: postgres
+    password: root
+  jpa:
+    show-sql: false
+    database: h2 
+    hibernate:
+      ddl-auto: none
+liquibase: 
+  enabled: true
+  change-log: file:database/h2:h2-root-changelog.xml
+security.ignored: /h2

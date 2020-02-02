@@ -8,6 +8,6 @@ public interface EmployeeService {
 	public List<Employee> getAllEmployees();
 	public Employee getEmployeeById(Long id);
 	public Employee addNewEmployee(Employee employee);
-	public void updateEmployee(Long id, Employee employee);
+	public boolean updateEmployee(Long id, Employee employee);
 	public void deleteEmployee(Long id);
 }

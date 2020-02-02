@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+      <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+          <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+          <File name="File" fileName="app.log" append="false">
+          <PatternLayout>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5p - %msg%n</Pattern>
+          </PatternLayout>
+        </File>
+        <File name="File2" fileName="app2.log" append="false">
+          <PatternLayout>
+            <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+          </PatternLayout>
+        </File>
+      </Appenders>
+      <Loggers>
+        <!-- set this value to one of all, off, fatal, error, warn, info, debug or trace -->
+        <Root level="info">
+          <AppenderRef ref="Console"/>
+          <AppenderRef ref="File" level="WARN"/>
+        </Root>
+        <Logger name="HelloWorld.InnerClassExample" level="all" additivity="false">
+          <AppenderRef ref="File"/>
+        </Logger>
+        <Logger name="HelloWorld_File2" level="all" additivity="false">
+          <AppenderRef ref="File2"/>
+        </Logger>
+      </Loggers>
+</Configuration>

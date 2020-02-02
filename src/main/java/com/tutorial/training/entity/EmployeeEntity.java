@@ -72,14 +72,14 @@ public class EmployeeEntity {
 	private DepartmentEntity department;
 	
 	@OneToMany(mappedBy = "manager")
-	private Set<EmployeeEntity> subordinates = new HashSet<EmployeeEntity>();
+	private Set<EmployeeEntity> subordinates = new HashSet<>();
 	
 	@Column(name = "CREATED_ON", nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreatedDate
 	private Date createdAt;
 	
-	@Column(nullable = false)
+	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
 	private Date updatedAt;
