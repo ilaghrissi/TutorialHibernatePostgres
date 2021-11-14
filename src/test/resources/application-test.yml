@@ -5,4 +5,7 @@ spring:
     username: postgres
   jpa:
     hibernate:
-      ddl-auto: create    
+      ddl-auto: create
+liquibase:
+  enabled: true
+  change-log: classpath:database/root-changelog.xml

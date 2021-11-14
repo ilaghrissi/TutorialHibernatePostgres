@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd"
+ logicalFilePath="classpath:database/changelog/1.0.0.xml">
+  <changeSet id="Ticket-001" author="imad" >
+    <addColumn schemaName= "public" tableName="jobs">
+      <column name="description" position="3" type="varchar(255)"/>
+      <column afterColumn="description" name="full_description" type="varchar(50)" >
+        <constraints nullable="false" />
+      </column>
+    </addColumn>
+  </changeSet>
+</databaseChangeLog>

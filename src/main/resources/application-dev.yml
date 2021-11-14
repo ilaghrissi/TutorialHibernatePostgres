@@ -19,3 +19,6 @@ spring:
             non_contextual_creation: true
   profiles:
     active: dev
+liquibase:
+  enabled: true
+  change-log: classpath:database/root-changelog.xml
